@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Fluency Era</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Quicksand:wght@700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/stylos.css">
+    <script src="https://kit.fontawesome.com/your-code.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="menu">
+        <header class="nav-bar">
+            <a href="index.html" class="logo"><span> The </span> Fluency <span>Era</span></a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="quemSouEu.html">Quem sou eu?</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </header>
+    </div>
+
+    <section class="contact-box">
+        <div class="form-container">
+            <h2>Inicío da jornada de fluência</h2>
+            <p>Preencha e fale comigo no WhatsApp agora!</p>
+
+            <form id="levelTest">
+                <input type="text" id="nome" placeholder="Seu Nome Completo" required>
+                <input type="text" id="idade" placeholder="Sua idade" required>
+
+                <label for="nivel">Como você avalia seu inglês hoje?</label>
+                <select id="nivel">
+                    <option value="" disabled selected>Selecione a opção</option>
+                    <option value="Nunca estudei">Nunca estudei</option>
+                    <option value="Iniciante">Iniciante</option>
+                    <option value="Básico">Básico</option>
+                    <option value="Intermediário">Intermediário</option>
+                    <option value="Avançado">Avançado</option>
+                </select>
+
+                <label>Já teve experiências anteriores com o inglês?</label>
+                <select id="temExperiencia" onchange="verificarExperiencia()">
+                    <option value="nao">Não</option>
+                    <option value="sim">Sim</option>
+                </select>
+
+                <div id="caixaExperiencia" style="display: none; margin-top: 10px;">
+                    <label>Me conte um pouco sobre sua experiência:</label>
+                    <textarea id="detalhesExperiencia" placeholder="Ex: Fiz 2 anos de curso, mas parei..."></textarea>
+                </div>
+
+                <label for="objetivo">Qual seu principal objetivo com o idioma?</label>
+                <textarea id="objetivo" placeholder="Ex: Viagem, Trabalho, Certificação, Conversação, etc."></textarea>
+
+                <label for="plano">Qual plano melhor atende sua necessidade?</label>
+                <select id="plano">
+                    <option value="" disabled selected>Selecione a opção</option>
+                    <option value="1x na semana">1x na semana</option>
+                    <option value="2x na semana">2x na semana</option>
+                    <option value="Pacote Personalizado">Pacote Personalizado</option>
+                </select>
+
+                <label for="horario">Preferência de horário:</label>
+                <select id="horario">
+                    <option value="" disabled selected>Selecione a opção</option>
+                    <option value="Manhã">Manhã</option>
+                    <option value="Tarde">Tarde</option>
+                    <option value="Noite">Noite</option>
+                </select>
+                <button type="button" id="btnEnviar" class="btn-send" onclick="sendToWhatsapp()">Enviar e Iniciar
+                    Chat</button>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        function sendToWhatsapp() {
+            /*1. Pega o botão para o feedback visual*/
+            const btn = document.getElementById('btnEnviar');
+
+            /*2. Captura os valores dos campos*/
+            const nome = document.getElementById('nome').value;
+            const idade = document.getElementById('idade').value; // Faltava essa linha!
+            const nivel = document.getElementById('nivel').value;
+            const objetivo = document.getElementById('objetivo').value;
+            const plano = document.getElementById('plano').value;
+            const horario = document.getElementById('horario').value;
+
+            /*Validação simples*/
+            if (nome === "" || idade === "") {
+                alert("Por favor, preencha seu nome e idade!");
+                return;
+            }
+
+            /*Feedback visual ("Enviando...")*/
+            btn.innerHTML = 'Enviando... 🚀';
+            btn.style.opacity = '0.7';
+
+            /*Monta a mensagem (Usando o nome correto: mensagem)*/
+            const mensagem = `Olá, Teacher Laura! ✨\n\nTenho interesse em iniciar minha jornada de fluência!\n
+            👤 *Nome:* ${nome}\n
+            🎂 *Idade:* ${idade} anos\n
+            📊 *Nível:* ${nivel}\n
+            🎯 *Objetivo:* ${objetivo}\n
+            📅 *Plano:* ${plano}\n
+            ⏰ *Horário:* ${horario}`;
+
+            const numero = "5582933005496";
+
+            /*Gera a URL (Aqui usamos 'mensagem', que foi o nome que você deu acima)*/
+            const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
+
+            /*Abre o WhatsApp*/
+            window.open(url, '_blank');
+
+            /*Restaura o botão após 2 segundos*/
+            setTimeout(() => {
+                btn.innerHTML = 'Enviar e Iniciar Chat';
+                btn.style.opacity = '1';
+            }, 2000);
+        }
+    </script>
+    <script src="JS/script.js"></script>
+</body>

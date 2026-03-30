@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Fluency Era</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Quicksand:wght@700&display=swap"
+        rel="stylesheet">
+        <link rel="icon" href="img/7442527.png">
+    <link rel="stylesheet" href="css/stylos.css">
+<script src="https://kit.fontawesome.com/your-code.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="menu">
+        <header class="nav-bar">
+            <a href="index.html" class="logo"><span> The </span> Fluency <span>Era</span></a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="quemSouEu.html">Quem sou eu?</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </header>
+    </div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Aprenda Inglês com: <br> </h1>
+            <h1><span>Teacher Laura</span></h1>
+            <p>Metodologia 100% online, foco equilibrado nas quatro competências fundamentais:
+                Speaking, Listening, Reading e Writing.
+            </p>
+            <a href="contact.html" class="btn-main">Quero começar!</a>
+        </div>
+        <div class="hero-img">
+            <img src="img/Gemini_Generated_Image_9nzp879nzp879nzp.png" alt="Teacher Laura">
+        </div>
+    </section>
+
+    <section class="methodology">
+        <div class="container">
+            <h2>Minha Metodologia</h2>
+            <div class="grid-cards">
+                <div class="card" onclick="abrirModal('dinamicas')">
+                    <h3> Metodologia Ativa e Interativa</h3>
+                    <p>Nossas aulas utilizam ferramentas digitais e situações reais para que você aprenda inglês de
+                        forma prática,
+                        focando na conversação desde o primeiro dia, sem métodos cansativos.</p>
+                </div>
+                <div class="card" onclick="abrirModal('foco')">
+                    <h3>Ensino Personalizado <br> (Student-Centered)</h3>
+                    <p> O cronograma é feito para você! Seja para viagens, carreira ou exames,
+                        você terá suporte via WhatsApp e flexibilidade total de horários para atingir sua fluência.</p>
+                </div>
+                <div class="card" onclick="abrirModal('digital')">
+                    <h3>Material Digital <br> Excelência Didática Oxford</h3>
+                    <p> Trabalhamos com o melhor material do mundo. Você terá acesso aos livros da Oxford University
+                        Press (Student’s Book e Workbook)
+                        de forma digital e interativa.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div id="meuModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="fecharModal()">&times;</span>
+            <h2 id="modalTitulo"></h2>
+            <p id="modalTexto"></p>
+        </div>
+    </div>
+    <script src="JS/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,139 @@
+/* 1. Ajuste da Seção para Tela Cheia Sem Rolagem */
+.experience-section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #fdfcfc 0%, #fae1e7 100%);
+    padding-top: 80px; /* Espaço para o menu fixo não cobrir o balão */
+    overflow: hidden; /* Evita barra de rolagem na página */
+    box-sizing: border-box;
+}
+
+/* 2. O Balão Compacto */
+.about-balloon-mini {
+    background-color: #f5cbdf;
+    width: 90%;
+    max-width: 1000px;
+    max-height: 85vh; /* Garante que caiba na altura da tela */
+    padding: 35px 50px;
+    border-radius: 80px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* 3. Layout Flexível */
+.about-flex-layout {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.about-text-column {
+    flex: 1.2;
+}
+
+/* 4. Estilização de Texto */
+.about-main-title {
+    color: #da1742;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.intro {
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: #df5353;
+    margin-bottom: 15px;
+    display: block;
+    font-family: 'Poppins', sans-serif;
+}
+
+p {
+    margin-bottom: 12px;
+    line-height: 1.5;
+    color: #444; /*Linha abaixo para destacar*/
+    font-size: 1rem;
+}
+
+.destaque {
+    font-weight: 600;
+    color: #da1742;
+    border-bottom: 2px solid #8f8184;
+}
+
+/* 5. Coluna da Imagem e Efeito Solto (Floating) */
+.about-img-column {
+    flex: 0 0 350px;
+    display: flex;
+    justify-content: center;
+}
+
+.img-floating {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    
+    /* REMOVENDO O "QUADRADO": */
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    
+    /* Sombra apenas no contorno da pessoa (PNG) */
+    filter: drop-shadow(0 10px 15px rgba(0,0,0,0.1));
+    
+    /* Efeito Dinâmico de Flutuar */
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
+
+/* 6. Frase Motivacional Impactante */
+.motivation-container {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.motivation-call {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.2rem;
+    color:  #da1742; /* Rosa vibrante motivacional */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: inline-block;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* 7. Responsividade para Celular */
+@media (max-width: 850px) {
+    .experience-section {
+        height: auto;
+        padding: 120px 20px 40px;
+        overflow-y: auto;
+    }
+    .about-balloon-mini {
+        max-height: none;
+        padding: 30px;
+    }
+    .about-flex-layout {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+    .about-main-title { text-align: center; }
+    .img-floating { max-width: 200px; }
+}
