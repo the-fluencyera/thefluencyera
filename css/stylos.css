@@ -253,6 +253,11 @@ input, select, textarea {
 @media (max-width: 768px) {
     
     /* 1. Ajuste do Menu */
+    .contact-box {
+        padding: 60px 15px !important; /* O 'important' garante que vença o PC */
+        display: flex;
+        justify-content: center;
+    }
     .nav-bar {
         flex-direction: column; /* Empilha a logo e os links */
         padding: 15px 20px;
@@ -297,16 +302,20 @@ input, select, textarea {
     }
 
     .form-container {
-        padding: 20px; /* Espaço interno da caixa branca */
-        width: 100%;   /* Garante que ela não passe da tela */
+        width: 100%;
+        max-width: 100%; /* Ocupa a largura disponível com segurança */
+        padding: 20px;   /* Espaço interno para as caixinhas não encostarem no branco */
+        margin: 0 auto;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
 
     /* Evita que o iPhone dê zoom automático ao clicar nos campos */
    input, select, textarea {
-        width: 100%;     /* Ocupa toda a largura disponível na caixa branca */
-        margin: 10px 0;  /* Espaço entre um campo e outro */
+        width: 100% !important;     /* Ocupa toda a largura disponível na caixa branca */
+        margin: 8px 0;  /* Espaço entre um campo e outro */
         max-width: 100%; /* Trava de segurança para não vazar */
         display: block;  /* Garante que cada um ocupe sua própria linha */
+       box-sizing: border-box; /* Fundamental: inclui o padding no tamanho total */
     }
 
     /* 4. Modais (Janelas que abrem) */
