@@ -137,3 +137,16 @@ p {
     .about-main-title { text-align: center; }
     .img-floating { max-width: 200px; }
 }
+.about-balloon-mini {
+        border-radius: 30px; /* Reduz as bordas super arredondadas que esmagam o texto */
+    }
+
+    .about-main-title {
+        font-size: 2rem; /* Diminui um pouco o título */
+    }
+
+    .motivation-call {
+        font-size: 1.5rem; /* Evita que a frase motivacional quebre a tela para os lados */
+        text-align: center;
+        display: block;
+    }
