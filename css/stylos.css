@@ -246,3 +246,66 @@ input, select, textarea {
     from { transform: scale(0.7); opacity: 0; }
     to { transform: scale(1); opacity: 1; }
 }
+/* REGRAS PARA CELULAR (MOBILE)*/
+@media (max-width: 768px) {
+    
+    /* 1. Ajuste do Menu */
+    .nav-bar {
+        flex-direction: column; /* Empilha a logo e os links */
+        padding: 15px 20px;
+        text-align: center;
+    }
+    
+    .nav-links {
+        margin-top: 15px;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+    
+    .nav-links a {
+        margin: 0 10px; /* Dá um espaçamento igual entre eles */
+        font-size: 14px;
+    }
+
+    /* 2. Ajuste do Hero (Destaque do topo) */
+    .hero {
+        flex-direction: column; /* Empilha texto e imagem */
+        text-align: center;
+        padding: 100px 20px 40px; /* Aumenta o topo por causa do menu fixo */
+    }
+
+    .hero h1 span {
+        font-size: 3rem; /* Diminui o texto gigante para caber na tela */
+    }
+
+    .hero-img {
+        padding: 20px; /* Reduz o espaçamento excessivo */
+    }
+
+    .hero-img img {
+        width: 200px; /* Reduz o tamanho da foto no celular */
+        height: 200px;
+    }
+
+    /* 3. Ajuste do Formulário */
+    .contact-box {
+        padding: 100px 20px 40px; /* Reduz a margem lateral gigante de 15% */
+    }
+
+    .form-container {
+        padding: 25px; /* Reduz o recuo interno para sobrar mais espaço para os campos */
+    }
+
+    /* Evita que o iPhone dê zoom automático ao clicar nos campos */
+    input, select, textarea {
+        font-size: 16px;
+    }
+
+    /* 4. Modais (Janelas que abrem) */
+    .modal-content {
+        width: 90%;
+        padding: 20px;
+        margin: 30% auto;
+    }
+}
