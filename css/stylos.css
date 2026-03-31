@@ -1,3 +1,6 @@
+* {
+    box-sizing: border-box;
+}
 :root {
     --primary: #e6a8d3; /* cabeçalho*/
     --secondary: #df5353; /* vermelho para contrastar */
@@ -290,16 +293,20 @@ input, select, textarea {
 
     /* 3. Ajuste do Formulário */
     .contact-box {
-        padding: 100px 20px 40px; /* Reduz a margem lateral gigante de 15% */
+        padding: 80px 15px; /* Reduz a margem lateral gigante de 15% */
     }
 
     .form-container {
-        padding: 25px; /* Reduz o recuo interno para sobrar mais espaço para os campos */
+        padding: 20px; /* Espaço interno da caixa branca */
+        width: 100%;   /* Garante que ela não passe da tela */
     }
 
     /* Evita que o iPhone dê zoom automático ao clicar nos campos */
-    input, select, textarea {
-        font-size: 16px;
+   input, select, textarea {
+        width: 100%;     /* Ocupa toda a largura disponível na caixa branca */
+        margin: 10px 0;  /* Espaço entre um campo e outro */
+        max-width: 100%; /* Trava de segurança para não vazar */
+        display: block;  /* Garante que cada um ocupe sua própria linha */
     }
 
     /* 4. Modais (Janelas que abrem) */
