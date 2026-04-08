@@ -68,7 +68,7 @@ body {
 
 .hero h1 span { 
     color: var(--secondary);
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Quicksand';
     font-size: 5rem;
 }
 
@@ -97,7 +97,7 @@ body {
     display: inline-block;
     padding: 12px 30px;
     background: var(--secondary);
-    color: var(--primary);
+    color: white;
     text-decoration: none;
     font-weight: bold;
     border-radius: 5px;
@@ -249,15 +249,11 @@ input, select, textarea {
     from { transform: scale(0.7); opacity: 0; }
     to { transform: scale(1); opacity: 1; }
 }
+
 /* REGRAS PARA CELULAR (MOBILE)*/
 @media (max-width: 768px) {
     
     /* 1. Ajuste do Menu */
-    .contact-box {
-        padding: 60px 15px !important; /* O 'important' garante que vença o PC */
-        display: flex;
-        justify-content: center;
-    }
     .nav-bar {
         flex-direction: column; /* Empilha a logo e os links */
         padding: 15px 20px;
@@ -302,20 +298,12 @@ input, select, textarea {
     }
 
     .form-container {
-        width: 100%;
-        max-width: 100%; /* Ocupa a largura disponível com segurança */
-        padding: 20px;   /* Espaço interno para as caixinhas não encostarem no branco */
-        margin: 0 auto;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        padding: 25px; /* Reduz o recuo interno para sobrar mais espaço para os campos */
     }
 
     /* Evita que o iPhone dê zoom automático ao clicar nos campos */
-   input, select, textarea {
-        width: 100% !important;     /* Ocupa toda a largura disponível na caixa branca */
-        margin: 8px 0;  /* Espaço entre um campo e outro */
-        max-width: 100%; /* Trava de segurança para não vazar */
-        display: block;  /* Garante que cada um ocupe sua própria linha */
-       box-sizing: border-box; /* Fundamental: inclui o padding no tamanho total */
+    input, select, textarea {
+        font-size: 16px;
     }
 
     /* 4. Modais (Janelas que abrem) */
