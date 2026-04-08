@@ -63,7 +63,7 @@ p {
 .destaque {
     font-weight: 600;
     color: #da1742;
-    border-bottom: 2px solid #8f8184;
+    
 }
 
 /* 5. Coluna da Imagem e Efeito Solto (Floating) */
@@ -77,6 +77,9 @@ p {
     width: 100%;
     max-width: 320px;
     height: auto;
+
+     /* Adicionando a segurança contra achatamento */
+    object-fit: contain;
     
     /* REMOVENDO O "QUADRADO": */
     border: none !important;
