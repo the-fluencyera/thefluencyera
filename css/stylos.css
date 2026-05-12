@@ -1,12 +1,15 @@
+/* Configuração Global */
 * {
-    box-sizing: border-box;
+    box-sizing: border-box; /* Garante que padding não estoure a largura */
 }
+
 :root {
-    --primary: #e6a8d3; /* cabeçalho*/
-    --secondary: #df5353; /* vermelho para contrastar */
-    --text: #423e3e;
+    --primary: #832424;    /* Vermelho Vinho */
+    --secondary: #a99780;  /* Marrom/Destaque */
+    --text: #423e3e;       /* Texto escuro para leitura */
     --white: #ffffff;
-    --bg-light: #f4f7f6;
+    --bg-light: #fae8d6;   /* Bege */
+    --accent: #eac8d6;     /* Rosa Bebê para detalhes */
 }
 
 body {
@@ -14,10 +17,8 @@ body {
     margin: 0;
     background-color: var(--bg-light);
     color: var(--text);
-    padding-top: -80;
-    
+    line-height: 1.6;
 }
-
 
 /* Nav Bar */
 .nav-bar {
@@ -26,290 +27,248 @@ body {
     align-items: center;
     padding: 20px 8%;
     background: var(--primary);
-    color: var(--white);
-    }
-.menu{
+    color: var(--bg-light);
+}
+
+.menu {
     position: fixed;
     width: 100%;
-    top: 0;            /* Cola no limite superior */
-    z-index: 9999; /* Garante que o menu seja a camada mais alta de todas */
+    top: 0;
+    z-index: 9999;
 }
 
 .logo { 
     text-decoration: none;
     font-size: 24px; 
     font-weight: bold; 
-    text-decoration: none; 
-    color: rgb(245, 245, 245); 
+    color: var(--bg-light); 
 }
 
-.logo span { 
-    color: var(--secondary);
-}
+.logo span { color: var(--secondary); }
 
 .nav-links a {
-    color: rgb(131, 25, 25);
+    color: var(--bg-light);
     text-decoration: none;
     margin-left: 20px;
     transition: 0.3s;
 }
 
-.nav-links a.active, .nav-links a:hover { color: var(--secondary); }
+.nav-links a.active, .nav-links a:hover { 
+    color: var(--white);
+    text-shadow: 0 0 8px var(--accent); /* Efeito neon suave condizente com a paleta */
+}
 
 /* Hero Section */
 .hero {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 50px 4%;
-    background: linear-gradient(135deg, #071e41 0%, #ce798b 100%);
-    color: white;
+    padding: 120px 8% 60px; /* Padding superior ajustado para o menu fixo */
+    background: linear-gradient(135deg, #e42a2a 0%, #4d1515 100%); /* Gradiente Vinho */
+    color: var(--bg-light);
 }
 
 .hero h1 span { 
     color: var(--secondary);
-    font-family: 'Quicksand';
+    font-family: 'Quicksand', sans-serif;
     font-size: 5rem;
 }
 
-/* O Container da Imagem  */
-.hero-img {
-    display: flex;         /* Necessário para o alinhamento central */
-    justify-content: center; /* Centraliza horizontalmente o container */
-    align-items: center;     /* Centraliza verticalmente o container */
-    padding: 50px;         /* Espaço interno para a borda não encostar no gradiente */
+.hero-img img {
+    width: 270px;
+    height: 270px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+    max-width: 100%;
 }
 
-/* ENQUADRAMENTO  */
-.hero-img img {
-    width: 270px;          /* Largura fixa da imagem reduzida */
-    height: 270px;         /* Altura fixa (igual para criar um quadrado/círculo) */
-    
-    /* ENQUADRAMENTO IDEAL (O mais importante!) */
-    object-fit: cover;     /* Preenche o espaço cortando as sobras, sem achatar */
-    object-position: center; /* Mantém o foco no centro da imagem ao cortar */
-   
-  
-    /* AJUSTE DE RESPONSIVIDADE (Celular) */
-    max-width: 100%;       /* Impede que a imagem quebre o layout em telas menores */
-}
 .btn-main {
     display: inline-block;
     padding: 12px 30px;
-    background: var(--secondary);
-    color: white;
+    background: var(--primary);
+    color: var(--bg-light);
     text-decoration: none;
     font-weight: bold;
     border-radius: 5px;
     margin-top: 20px;
+    border: 1px solid var(--secondary);
+    transition: 0.3s;
 }
-.methodology h2 {
-    display: block;      /* Força o elemento a ocupar a linha toda */
-    width: 100%;         /* Garante que ele veja a largura total para achar o centro */
-    text-align: center;  /* Agora o centro será o meio da tela */
-    margin: 40px 0;      /* Dá um espaçamento em cima e embaixo */
-    color: #0a192f;
+
+.btn-main:hover {
+    background: var(--secondary);
+    color: var(--primary);
 }
+
 /* Grid Cards */
 .grid-cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
-    padding: 50px 0;
+    padding: 50px 8%;
 }
 
+/* --- AJUSTE DOS CARDS --- */
 .card {
-    background: #f3dee2;
-    padding: 50px;
+    background: var(--white);
+    padding: 40px 20px;
     border-radius: 10px;
-    box-shadow: 0 3px 15px rgb(131, 25, 25);
+    box-shadow: 0 5px 15px rgba(131, 36, 36, 0.1);
     text-align: center;
-    border-bottom: 3px solid var(--secondary);
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Define a velocidade da animação (0.3 segundos) */
-    cursor: pointer; /* Muda o mouse para a "mãozinha" ao passar por cima */
-}
-.card:hover{
-    transform: scale(1.05);
+    border-bottom: 4px solid var(--primary);
+    transition: 0.3s;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-/* Formulário */
+.card:hover { transform: scale(1.03); }
+
+/* Formulário de Contato */
 .contact-box { 
     padding: 80px 15%; 
     display: flex; 
-    justify-content: center; }
+    justify-content: center; 
+    background-color: var(--bg-light);
+}
+
 .form-container {
-    height: auto;
-    background: white;
-    padding: 50px;
+    background: var(--white);
+    padding: 40px;
     border-radius: 20px;
     width: 100%;
     max-width: 500px;
-    box-shadow: 0 5px 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
 
 input, select, textarea {
     width: 100%;
     padding: 12px;
     margin: 10px 0;
-    border: 1px solid #968f8f;
+    border: 1px solid #d1ccc0;
     border-radius: 5px;
+    font-size: 1rem;
+    background-color: #fff;
 }
 
 .btn-send {
     width: 100%;
     padding: 15px;
-    color: white;
+    color: var(--bg-light);
+    background-color: var(--primary);
     border: none;
     font-weight: bold;
     cursor: pointer;
-    border-radius: 15px;
-}
-/* Efeito visual para quando o botão estiver desativado/enviando */
-.btn-send:disabled {
-    cursor: not-allowed;
-    background: #ccc !important; /* Cor cinza para indicar que está processando */
-    transform: scale(0.98);
-}
-
-/* Opcional: Efeito de pulsação suave enquanto o mouse está em cima */
-.btn-send:hover {
+    border-radius: 10px;
     transition: 0.3s;
-    box-shadow: 0 0 15px rgba(231, 160, 160, 0.5);
-}
-.question {
-    text-align: left;
-    margin-bottom: 20px;
-    background: #f9f9f9;
-    padding: 10px;
-    border-radius: 15px;
-}
-
-.question p {
-    font-weight: bold;
-    margin-bottom: 15px;
-    color: var(--primary);
-}
-
-/* Cor do WhatsApp */
-.btn-send {
-    background-color:#e7a0a0;
-    transition: transform 0.1s;
 }
 
 .btn-send:hover {
-    transform: scale(1.05);
-    background: linear-gradient(#f3b8c4, #df5353);
+    background-color: #c92424;;
+    color: #d3beaa;
 }
 
-/* ESTILOS DO MODAL (EXPANSÃO DOS CARDS) */
-/* 1. O fundo escurecido que cobre a tela */
+/* --- AJUSTE DO MODAL (A JANELA QUE ABRE) --- */
 .modal {
     display: none; 
     position: fixed; 
-    z-index: 2000; /* Garante que fique acima da nav-bar fixa */
+    z-index: 10000; /* Aumentado para garantir que fique sobre tudo */
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8); /* Fundo bem escuro para dar foco */
-    overflow: auto; /* Permite rolar se o texto for muito grande */
+    background-color: rgba(0, 0, 0, 0.7); 
+    backdrop-filter: blur(5px); /* Efeito de desfoque no fundo para foco total */
+    overflow-y: auto; /* Permite rolar se o texto for longo */
 }
 
-/* 2. A caixa branca de conteúdo */
 .modal-content {
-    background-color: #fff;
-    margin: 10% auto; 
-    padding: 40px;
-    border-radius: 15px;
-    width: 80%;
-    max-width: 600px; /* Impede que fique largo demais em telas grandes */
-    text-align: center;
+    background-color: var(--white);
+    margin: 5% auto; 
+    padding: 30px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 600px;
     position: relative;
-    box-shadow: 0 5px 30px rgba(0,0,0,0.3);
-    animation: zoomIn 0.3s ease; /* Efeito de abertura suave */
+    box-shadow: 0 10px 40px rgba(133, 8, 8, 0.616);
+    animation: zoomIn 0.3s ease-out;
+    text-align: center;
+    color: var(--text);
 }
 
-/* 3. Botão de fechar (X) */
+/* Título e Texto dentro do Modal */
+.modal-content h2 {
+    color: var(--primary);
+    margin-bottom: 15px;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.modal-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #444;
+}
+
+/* Botão de Fechar */
 .close {
     position: absolute;
     right: 20px;
-    top: 10px;
-    font-size: 35px;
-    font-weight: bold;
-    color: #ce798b; /* Usando o seu tom de rosa/coral */
+    top: 15px;
+    font-size: 28px;
+    color: var(--primary);
     cursor: pointer;
+    font-weight: bold;
 }
 
-.close:hover {
-    color: #0a192f; /* Muda para o seu azul escuro ao passar o mouse */
+/* Centralização do Título da Metodologia */
+.methodology h2 {
+    display: block;      /* Garante que o título se comporte como um bloco */
+    width: 100%;         /* Ocupa toda a largura disponível */
+    text-align: center;  /* Alinha o texto exatamente no meio */
+    margin: 60px 0 30px; /* Dá um espaço maior em cima (60px) e um respiro embaixo (30px) */
+    color: var(--primary); 
+    font-family: 'Quicksand', sans-serif; 
+    font-size: 2.5rem;  
 }
 
-/* Animação para o Modal aparecer crescendo */
+/* Ajuste para Mobile */
+@media (max-width: 768px) {
+    .methodology h2 {
+        font-size: 1.8rem; /* Diminui um pouco o título em telas pequenas para não quebrar linha */
+        margin: 40px 0 20px;
+        padding: 0 20px;   /* Evita que o texto encoste nas bordas do celular */
+    }
+}
+
 @keyframes zoomIn {
-    from { transform: scale(0.7); opacity: 0; }
+    from { transform: scale(0.8); opacity: 0; }
     to { transform: scale(1); opacity: 1; }
 }
 
-/* REGRAS PARA CELULAR (MOBILE)*/
+/* --- RESPONSIVIDADE MOBILE --- */
 @media (max-width: 768px) {
-    
-    /* 1. Ajuste do Menu */
-    .nav-bar {
-        flex-direction: column; /* Empilha a logo e os links */
-        padding: 15px 20px;
-        text-align: center;
-    }
-    
-    .nav-links {
-        margin-top: 15px;
-        display: flex;
-        justify-content: center;
-        width: 100%;
-    }
-    
-    .nav-links a {
-        margin: 0 10px; /* Dá um espaçamento igual entre eles */
-        font-size: 14px;
-    }
-
-    /* 2. Ajuste do Hero (Destaque do topo) */
-    .hero {
-        flex-direction: column; /* Empilha texto e imagem */
-        text-align: center;
-        padding: 100px 20px 40px; /* Aumenta o topo por causa do menu fixo */
-    }
-
-    .hero h1 span {
-        font-size: 3rem; /* Diminui o texto gigante para caber na tela */
-    }
-
-    .hero-img {
-        padding: 20px; /* Reduz o espaçamento excessivo */
-    }
-
-    .hero-img img {
-        width: 200px; /* Reduz o tamanho da foto no celular */
-        height: 200px;
-    }
-
-    /* 3. Ajuste do Formulário */
-    .contact-box {
-        padding: 80px 15px; /* Reduz a margem lateral gigante de 15% */
-    }
-
-    .form-container {
-        padding: 25px; /* Reduz o recuo interno para sobrar mais espaço para os campos */
-    }
-
-    /* Evita que o iPhone dê zoom automático ao clicar nos campos */
-    input, select, textarea {
-        font-size: 16px;
-    }
-
-    /* 4. Modais (Janelas que abrem) */
     .modal-content {
-        width: 90%;
+        margin: 20% auto; /* Desce um pouco mais a caixa no celular */
         padding: 20px;
-        margin: 30% auto;
+        width: 95%; /* Quase toda a largura no mobile */
     }
+    
+    .modal-content p {
+        font-size: 1rem; /* Texto um pouco menor para telas pequenas */
+    }
+}
+/* --- RESPONSIVIDADE MOBILE (stylos.css) --- */
+@media (max-width: 768px) {
+    .nav-bar { flex-direction: column; padding: 15px; }
+    .nav-links { margin-top: 15px; }
+    .nav-links a { margin: 0 8px; font-size: 14px; }
+    
+    .hero { flex-direction: column; text-align: center; padding-top: 140px; }
+    .hero h1 span { font-size: 3rem; }
+    
+    .contact-box { padding: 60px 15px; } /* Evita bater na borda */
+    .form-container { padding: 20px; }
 }
