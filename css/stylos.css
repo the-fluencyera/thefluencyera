@@ -1,3 +1,4 @@
+
 /* Configuração Global */
 * {
     box-sizing: border-box; /* Garante que padding não estoure a largura */
@@ -44,7 +45,7 @@ body {
     color: var(--bg-light); 
 }
 
-.logo span { color: var(--secondary); }
+.logo span { color: #f08b8b;; }
 
 .nav-links a {
     color: var(--bg-light);
@@ -69,36 +70,41 @@ body {
 }
 
 .hero h1 span { 
-    color: var(--secondary);
-    font-family: 'Quicksand', sans-serif;
-    font-size: 5rem;
+    color: #e9b9cd;
+    font-family: 'Railey', cursive;
+    font-size: 8rem;
+    display: inline-block;
+   
 }
 
 .hero-img img {
-    width: 270px;
-    height: 270px;
+    width: 500px;
+    height: 500px;
     object-fit: cover;
     object-position: center;
     border-radius: 10px;
     max-width: 100%;
 }
 
+/*botão do index*/
 .btn-main {
+    border: 1px solid var(--bg-light);
+    color: #ffffff; /* Mantém o texto branco para leitura */
     display: inline-block;
     padding: 12px 30px;
     background: var(--primary);
-    color: var(--bg-light);
     text-decoration: none;
     font-weight: bold;
     border-radius: 5px;
     margin-top: 20px;
-    border: 1px solid var(--secondary);
+  
     transition: 0.3s;
 }
 
 .btn-main:hover {
-    background: var(--secondary);
-    color: var(--primary);
+    background-color: #a32020;;
+    color: #d3beaa;
+   
 }
 
 /* Grid Cards */
@@ -167,7 +173,7 @@ input, select, textarea {
 }
 
 .btn-send:hover {
-    background-color: #c92424;;
+    background-color: #a32020;;
     color: #d3beaa;
 }
 
@@ -233,6 +239,12 @@ input, select, textarea {
     font-family: 'Quicksand', sans-serif; 
     font-size: 2.5rem;  
 }
+@font-face {
+    font-family: 'Railey'; 
+    src: url(../fontes/Railey-PersonalUse.ttf) format('truetype'); 
+    font-weight: normal;
+    font-style: normal;
+}
 
 /* Ajuste para Mobile */
 @media (max-width: 768px) {
@@ -267,8 +279,8 @@ input, select, textarea {
     .nav-links a { margin: 0 8px; font-size: 14px; }
     
     .hero { flex-direction: column; text-align: center; padding-top: 140px; }
-    .hero h1 span { font-size: 3rem; }
+    .hero h1 span { font-size: 3.5rem; } /* Adicionei a chave } que faltava aqui */
     
-    .contact-box { padding: 60px 15px; } /* Evita bater na borda */
+    .contact-box { padding: 60px 15px; } 
     .form-container { padding: 20px; }
 }
