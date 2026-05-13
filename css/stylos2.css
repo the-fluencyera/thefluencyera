@@ -37,7 +37,7 @@
 
 .intro {
     font-weight: 600;
-    color: var(--secondary);
+    color: #c06b6b;
     margin-bottom: 15px;
     font-size: 1.2rem;
 }
@@ -50,14 +50,14 @@
 
 /* Imagem Flutuante */
 .about-img-column {
-    flex: 0 0 300px;
+    flex: 0 0 220px;
 }
 
 .img-floating {
     width: 100%;
     height: auto;
-    filter: drop-shadow(0 10px 15px rgba(0,0,0,0.1));
-    animation: float 2.1s ease-in-out infinite;
+    filter: drop-shadow(0 10px 15px rgba(145, 8, 8, 0.1));
+   
 }
 
 @keyframes float {
@@ -71,7 +71,7 @@
     font-size: 2rem;
     color: var(--primary);
     text-transform: uppercase;
-    animation: pulse 2s infinite;
+   
 }
 
 @keyframes pulse {
