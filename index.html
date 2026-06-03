@@ -1,73 +1,395 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Fluency Era</title>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
-            <link rel="icon" href="img/Logotipo .png">
-    <link rel="stylesheet" href="css/stylos.css">
-<script src="https://kit.fontawesome.com/your-code.js" crossorigin="anonymous"></script>
+    <title>The Fluency Era | Teacher Laura</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/css/stylos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body>
-    <div class="menu">
-        <header class="nav-bar">
-            <a href="index.html" class="logo"><span> The </span> Fluency <span>Era</span></a>
-            <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="quemSouEu.html">Quem sou eu?</a>
-                <a href="contact.html">Contact</a>
+
+    <nav>
+        <div class="logo">THE FLUENCY ERA</div>
+        <button class="btn-nav open-modal-btn">AGENDAR AULA</button>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-container">
+            <div class="hero-text">
+                <span class="badge">✦ AULAS PERSONALIZADAS DE INGLÊS</span>
+                <h1>Destrave seu inglês com aulas particulares e <span class="italic-text">acompanhamento real.</span>
+                </h1>
+                <p>Aprenda inglês com uma professora certificada pela Cambridge (CAE C1), utilizando o consagrado
+                    material Oxford e uma abordagem prática focada em conversação desde o primeiro dia.</p>
+                <button class="btn-hero open-modal-btn">✦ AGENDAR AULA EXPERIMENTAL</button>
             </div>
-        </header>
-    </div>
-
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Aprenda Inglês com: <br> </h1>
-            <h1><span>Teacher Laura</span></h1>
-            <p>The Fluency Era: Sua evolução no inglês começa aqui!
-            </p>
-            <a href="contact.html" class="btn-main">Quero começar!</a>
-        </div>
-        <div class="hero-img">
-            <img src="img/white.png" alt="Teacher Laura">
-        </div>
-    </section>
-
-    <section class="methodology">
-        <div class="container">
-            <h2>Minha Metodologia</h2>
-            <div class="grid-cards">
-                <div class="card" onclick="abrirModal('dinamicas')">
-                    <h3> Metodologia Ativa e Interativa</h3>
-                    <p>Nossas aulas utilizam ferramentas digitais e situações reais para que você aprenda inglês de
-                        forma prática,
-                        focando na conversação desde o primeiro dia, sem métodos cansativos.</p>
-                </div>
-                <div class="card" onclick="abrirModal('foco')">
-                    <h3>Ensino Personalizado <br> (Student-Centered)</h3>
-                    <p> O cronograma é feito para você! Seja para viagens, carreira ou exames,
-                        você terá suporte via WhatsApp e flexibilidade total de horários para atingir sua fluência.</p>
-                </div>
-                <div class="card" onclick="abrirModal('digital')">
-                    <h3>Material Digital <br> Excelência Didática Oxford</h3>
-                    <p> Trabalhamos com o melhor material do mundo. Você terá acesso aos livros da Oxford University
-                        Press (Student’s Book e Workbook)
-                        de forma digital e interativa.</p>
+            <div class="hero-image-container">
+                <div class="image-wrapper">
+                    <img src="/img/começo.jpg" alt="Teacher Laura Morales" class="hero-img-fallback">
+                    <div class="cambridge-badge">
+                        <span class="badge-title">C1</span>
+                        <span class="badge-subtitle">CAMBRIDGE<br>ADVANCED</span>
+                    </div>
                 </div>
             </div>
         </div>
+    </header>
+
+    <section class="features-section">
+        <div class="section-header">
+            <span class="badge-small">POR QUE ESCOLHER</span>
+            <h2>A experiência de aprendizado que faz a diferença</h2>
+            <p>Cada detalhe foi pensado para que você evolua com segurança, ritmo e consistência.</p>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="card-icon">📚</div>
+                <h3>Material Oxford Incluso</h3>
+                <p>Você aprende com o melhor ecossistema de ensino do mundo. Sem custos adicionais ou surpresas.</p>
+            </div>
+            <div class="feature-card">
+                <div class="card-icon">✍️</div>
+                <h3>Correção Ativa</h3>
+                <p>Suas atividade semanais recebem correções diretamente de mim, garantindo feedbacks individuais
+                    eficientes , para que você acompanhe sua evolução em tempo real.</p>
+            </div>
+            <div class="feature-card">
+                <div class="card-icon">🕒</div>
+                <h3>Suporte de Seg. a Sex.</h3>
+                <p>Suas dúvidas cotidianas são respondidas rapidamente no WhatsApp. Você não precisa esperar pela
+                    próxima aula para evoluir.</p>
+            </div>
+            <div class="feature-card">
+                <div class="card-icon">🎮</div>
+                <h3>Aulas Gamificadas</h3>
+                <p>Utilização de metodologias dinâmicas e interativas que mantêm o nível de engajamento alto e o
+                    aprendizado fluido.</p>
+            </div>
+            <div class="feature-card">
+                <div class="card-icon">📅</div>
+                <h3>Flexibilidade Real</h3>
+                <p>Escolha e ajuste seus horários de acordo com sua rotina profissional ou acadêmica. Estudo sem
+                    estresse.</p>
+            </div>
+            <div class="feature-card">
+                <div class="card-icon">📊</div>
+                <h3>Relatório de Evolução</h3>
+                <p>A cada 3 meses você ganha um diagnóstico minucioso mapeando seus avanços e caminhos práticos para o
+                    próximo nível.</p>
+            </div>
+        </div>
     </section>
-    <div id="meuModal" class="modal">
+
+    <section class="about-section">
+        <div class="about-container">
+            <div class="about-image-wrapper">
+                <img src="img/meio.jpg" alt="Laura Morales" class="about-img-fallback">
+                <div class="about-name-tag">
+                    <h3>Laura Morales</h3>
+                    <p>TEACHER · CAMBRIDGE CAE C1</p>
+                </div>
+            </div>
+            <div class="about-content">
+                <span class="badge-small">QUEM É TEACHER LAURA?</span>
+                <h2>Atenção e metodologia para tornar a sua fluência possível.</h2>
+                <h3>Olá, eu sou a Teacher Laura!</h3>
+                <p class="subtitle-instructor">PROFESSORA DE INGLÊS DESDE 2021</p>
+                <p>Acredito genuinamente que o inglês transforma vidas — e que <strong>você merece uma mentora dedicada
+                        que acompanhe cada passo do seu desenvolvimento.</strong></p>
+                <p>Sou graduanda em Letras, certificada internacionalmente pela <strong>Cambridge com nível Advanced
+                        (CAE C1)</strong> e utilizo materiais da <strong>Oxford University</strong>
+                    para moldar materiais sob medida.
+                    <br>
+                    <br>Tenho experiência com crianças, adolescentes e adultos — e cada aluno recebe atenção individual,
+                    do início ao fim.
+                </p>
+                <p>Meu foco é eliminar o medo de errar e destravar sua conversação de forma leve, objetiva e acolhedora.
+                </p>
+                <div class="tags-container">
+                    <span class="info-tag">Cambridge CAE C1</span>
+                    <span class="info-tag">Material Oxford</span>
+                    <span class="info-tag">Graduanda em Letras</span>
+                    <span class="info-tag">Suporte Individual</span>
+                    <span class="info-tag">Desde 2021</span>
+                    <span class="info-tag">Online</span>
+                    <span class="info-tag">Crianças & Adultos</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="methodology-banner">
+        <span class="badge-light">METODOLOGIA</span>
+        <h2>Inglês voltado para a vida real.</h2>
+        <p class="methodology-sub">Abordagem comunicativa e gramática contextualizada para você se expressar com
+            naturalidade.</p>
+        <blockquote class="quote">"Você aprende a usar o inglês, não apenas a estudar as regras do inglês."</blockquote>
+    </section>
+
+    <section class="report-section">
+        <div class="report-container">
+            <div class="report-preview-box">
+                <div class="report-header-internal">✦ Relatório Trimestral</div>
+                <div class="report-row"><span>Speaking</span>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 95%;"></div>
+                    </div>
+                </div>
+                <div class="report-row"><span>Listening</span>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 95%;"></div>
+                    </div>
+                </div>
+                <div class="report-row"><span>Grammar</span>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 95%;"></div>
+                    </div>
+                </div>
+                <div class="report-row"><span>Vocabulary</span>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 95%;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="report-text">
+                <span class="badge-small">THE FLUENCY REPORT</span>
+                <h2>Sua evolução, <br> documentada de verdade</h2>
+                <p>A cada <strong>trimestre</strong> de estudos, você recebe uma análise minuciosa de performance
+                    cobrindo cada habilidade essencial do idioma.</p>
+                <p>Muito mais que notas corporativas, o Fluency Report <strong>plano de ação individualizado</strong>
+                    apontando precisamente onde ajustar seu foco para continuar evoluindo.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="modalities-section">
+        <div class="section-header">
+            <span class="badge-small">FORMATOS</span>
+            <h2>Encontre o modelo perfeito para você</h2>
+            <p>Para aulas em duplas e trios, você pode trazer pessoas conhecidas
+                que também estão interessadas para estudar junto com você - mediante avaliação de nível.</p>
+        </div>
+        <div class="modalities-grid">
+            <div class="modality-card">
+                <div class="mod-icon">
+                    <i class="fa-regular fa-user modalidade-icon"></i>
+                </div>
+                <h3>Individual</h3>
+                <p>Atenção integral focada no seu ritmo, necessidades imediatas e demandas profissionais específicas.
+                </p>
+            </div>
+            <div class="modality-card popular">
+                <div class="popular-badge">POPULAR</div>
+                <div class="mod-icon">
+                    <i class="fa-solid fa-user-group modalidade-icon"></i>
+                </div>
+                <h3>Duplas</h3>
+                <p>Estude com um amigo ou parceiro. Interação ativa, networking e economia compartilhada.</p>
+            </div>
+            <div class="modality-card">
+                <div class="mod-icon">
+                    <i class="fa-solid fa-users modalidade-icon"></i>
+                </div>
+                <h3>Trios</h3>
+                <p>Dinâmica social enriquecedora em grupos com amigo(s) ou parceiro. Grupo reduzido para manter a
+                    qualidade lá no topo.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-section" id="faq">
+        <div class="section-header">
+            <span class="badge-small">FAQ</span>
+            <h2>Perguntas Frequentes</h2>
+        </div>
+
+        <div class="faq-grid">
+            <div class="faq-item">
+                <div class="faq-q" onclick="toggleFaq(this)">
+                    <span>Preciso saber inglês para começar?</span>
+                    <div class="faq-icon">+</div>
+                </div>
+                <div class="faq-a">
+                    <div class="faq-a-inner">
+                        Não! As aulas são adaptadas para todos os níveis, inclusive para quem está começando do zero. O
+                        diagnóstico inicial define o ponto de partida ideal para você.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q" onclick="toggleFaq(this)">
+                    <span>Como funciona o nivelamento?</span>
+                    <div class="faq-icon">+</div>
+                </div>
+                <div class="faq-a">
+                    <div class="faq-a-inner">
+                        Antes da aula, você recebe um questionário rápido para um alinhamento inicial de nível. Durante
+                        a aula experimental, validamos esse resultado de forma prática e dinâmica enquanto conversamos
+                        em inglês e nos conhecemos melhor. Após esse diagnóstico, estruturamos seu plano personalizado.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q" onclick="toggleFaq(this)">
+                    <span>Qual a frequência ideal de aulas?</span>
+                    <div class="faq-icon">+</div>
+                </div>
+                <div class="faq-a">
+                    <div class="faq-a-inner">
+                        A frequência ideal depende da sua disponibilidade e objetivos. Geralmente, recomendamos de 1 a 2
+                        aulas por semana para manter um ritmo constante de aprendizado e fixação de conteúdo.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q" onclick="toggleFaq(this)">
+                    <span>Qual a duração do curso?</span>
+                    <div class="faq-icon">+</div>
+                </div>
+                <div class="faq-a">
+                    <div class="faq-a-inner">
+                        Por ser um curso 100% personalizado, não há um tempo fixo de duração. Você avança de acordo com
+                        o seu próprio ritmo e necessidades específicas, sem prazos engessados.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q" onclick="toggleFaq(this)">
+                    <span>O material Oxford está incluso?</span>
+                    <div class="faq-icon">+</div>
+                </div>
+                <div class="faq-a">
+                    <div class="faq-a-inner">
+                        Sim! Todo o material didático premium da renomada editora Oxford já está completamente incluso
+                        nas modalidades de aula, sem nenhuma cobrança de taxas adicionais.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q" onclick="toggleFaq(this)">
+                    <span>Como funciona o suporte entre as aulas?</span>
+                    <div class="faq-icon">+</div>
+                </div>
+                <div class="faq-a">
+                    <div class="faq-a-inner">
+                        Você tem canal direto comigo via WhatsApp de segunda a sexta-feira para tirar dúvidas, enviar
+                        exercícios ou solicitar feedbacks complementares, sem precisar esperar o dia da próxima aula.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-final">
+        <div class="cta-container">
+            <div class="cta-text-side">
+                <span class="badge-small">PRONTO PARA COMEÇAR?</span>
+                <h2>Pronto para destravar de vez o <span class="italic-text">seu potencial?</span></h2>
+                <p>Fale comigo hoje mesmo. A aula experimental é o espaço ideal para entendermos seus pontos críticos e
+                    desenharmos seu plano rumo ao inglês avançado.</p>
+                <button class="btn-cta open-modal-btn">✦ QUERO EVOLUIR</button>
+            </div>
+            <div class="cta-image-side">
+                <div class="cta-image-box">
+                    <img src="/img/final.jpg" alt="Fluency Journey" class="cta-img-fallback">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 The Fluency Era — Desenvolvido por Tony Mark.</p>
+    </footer>
+
+    <div id="bookingModal" class="modal">
         <div class="modal-content">
-            <span class="close" onclick="fecharModal()">&times;</span>
-            <h2 id="modalTitulo"></h2>
-            <p id="modalTexto"></p>
+            <span class="close-modal">&times;</span>
+            <div class="modal-body-box">
+                <h2>Início da jornada de fluência</h2>
+                <p class="modal-subtitle">Preencha os detalhes e vamos conversar no WhatsApp!</p>
+
+                <form id="whatsappForm">
+                    <div class="form-group">
+                        <label for="userName">Seu Nome Completo</label>
+                        <input type="text" id="userName" placeholder="Ex: João Silva" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="userAge">Sua Idade</label>
+                        <input type="number" id="userAge" placeholder="Ex: 28" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="englishLevel">Como você avalia seu inglês hoje?</label>
+                        <select id="englishLevel" required>
+                            <option value="" disabled selected>Selecione uma opção</option>
+                            <option value="Iniciante">Iniciante (Não sei nada ou muito pouco)</option>
+                            <option value="Básico">Básico (Entendo um pouco, mas travo na fala)</option>
+                            <option value="Intermediário">Intermediário (Já me comunico, mas procuro aperfeiçoamento)
+                            </option>
+                            <option value="Avançado">Avançado (Sou fluente, mas quero refinar meu inglês)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="hasExperience">Já teve experiências anteriores com o inglês?</label>
+                        <select id="hasExperience" required>
+                            <option value="" disabled selected>Selecione uma opção</option>
+                            <option value="Não">Não</option>
+                            <option value="Sim, em cursos tradicionais">Sim, em cursos tradicionais</option>
+                            <option value="Sim, com professores particulares">Sim, com professores particulares</option>
+                            <option value="Sim, de forma autodidata">Sim, por conta própria</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="userObjective">Qual seu principal objetivo com o idioma?</label>
+                        <textarea id="userObjective" placeholder="Ex: Viagem, Promoção no Trabalho, Conversação, etc."
+                            rows="3" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="preferredPlan">Qual plano melhor atende sua necessidade?</label>
+                        <select id="preferredPlan" required>
+                            <option value="" disabled selected>Selecione uma opção</option>
+                            <option value="1x na semana">1x na semana</option>
+                            <option value="2x na semana">2x na semana</option> Turma para iniciantes (quinta-feira 20h)
+                            <option value="Personalizado">Pacote personalizado</option>
+                            <option value="Turma">Turma para iniciantes (quinta-feira 20h)</option>
+
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="preferredTime">Preferência de horário para as aulas:</label>
+                        <select id="preferredTime" required>
+                            <option value="" disabled selected>Selecione uma opção</option>
+                            <option value="Manhã">Manhã</option>
+                            <option value="Tarde">Tarde</option>
+                            <option value="Noite">Noite</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn-submit-form">Enviar e Iniciar Chat</button>
+                </form>
+            </div>
         </div>
     </div>
-    <script src="JS/script.js"></script>
+
+    <script src="/JS/action.js"></script>
 </body>
 
 </html>
