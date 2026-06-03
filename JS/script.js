@@ -1,125 +1,102 @@
-/*LÓGICA DO FORMULÁRIO DE CONTATO - WHATSAPP BUSINESS*/
+document.addEventListener('DOMContentLoaded', () => {
 
-/*Mostra ou esconde a caixa de texto de detalhes 
- dependendo da escolha "Sim" ou "Não" no select de experiência.*/
+    // --- LÓGICA DO ACORDION DO FAQ (CORRIGIDO) ---
+    const faqQuestions = document.querySelectorAll('.faq-q');
 
-function verificarExperiencia() {
-    const selecao = document.getElementById('temExperiencia').value;
-    const caixaDetalhes = document.getElementById('caixaExperiencia');
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', () => {
+            const item = question.parentElement;
+            const answer = question.nextElementSibling;
 
-    if (selecao === 'sim') {
-        caixaDetalhes.style.display = 'block';
-    } else {
-        caixaDetalhes.style.display = 'none';
-        // Limpa o campo caso o usuário mude de ideia
-        document.getElementById('detalhesExperiencia').value = '';
-    }
-}
+            if (item.classList.contains('active')) {
+                answer.style.maxHeight = '0';
+                item.classList.remove('active');
+            } else {
+                // Fecha qualquer outro item aberto antes de expandir o atual
+                document.querySelectorAll('.faq-item.active').forEach(activeItem => {
+                    activeItem.querySelector('.faq-a').style.maxHeight = '0';
+                    activeItem.classList.remove('active');
+                });
 
-/*Captura todos os dados do formulário, monta uma mensagem 
-  profissional e redireciona para o WhatsApp da Teacher Laura.*/
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+                item.classList.add('active');
+            }
+        });
+    });
 
-function sendToWhatsapp() {
-    // 1. CAPTURA DE TODOS OS CAMPOS DO FORMULÁRIO
-    const btn = document.getElementById('btnEnviar'); // Pega o botão pelo ID
-    const nome = document.getElementById('nome').value;
-    const idade = document.getElementById('idade').value;
-    const nivel = document.getElementById('nivel').value;
-    const temExp = document.getElementById('temExperiencia').value;
-    const detalhesExp = document.getElementById('detalhesExperiencia').value;
-    const objetivo = document.getElementById('objetivo').value;
-    const plano = document.getElementById('plano').value;
-    const horario = document.getElementById('horario').value;
+    // --- LÓGICA DE GERENCIAMENTO DA JANELA MODAL ---
+    const modal = document.getElementById('bookingModal');
+    const openModalButtons = document.querySelectorAll('.open-modal-btn');
+    const closeModalButton = document.querySelector('.close-modal');
 
-    // 2. VALIDAÇÃO SIMPLES
-    // Impede o envio se o nome ou idade estiverem vazios
-    if (nome === "" || idade === "") {
-        alert("Por favor, preencha seu nome e idade antes de enviar.");
-        return;
-    }
+    // Abre a modal ao clicar em qualquer botão com a classe correspondente
+    openModalButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden'; // Trava rolagem de fundo
+        });
+    });
 
-    // 3. ANIMAÇÃO DE FEEDBACK
-    btn.innerHTML = 'Enviando... 🚀'; // Muda o texto do botão
-    btn.style.opacity = '0.7';        // Deixa ele levemente transparente
-    btn.disabled = true;              // Impede cliques duplos
+    // Fecha a janela ao clicar no (X)
+    closeModalButton.addEventListener('click', () => {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto'; // Restaura rolagem
+    });
 
-    // 4. MONTAGEM DA MENSAGEM ESTRUTURADA
-    // Usamos \n para quebra de linha interna e * para negrito no WhatsApp
-    let mensagem = `Olá, Teacher Laura! ✨\n`;
-    mensagem += `Gostaria de informações sobre as aulas.\n\n`;
-    mensagem += `*--- DADOS DO ALUNO ---*\n`;
-    mensagem += `*Nome:* ${nome}\n`;
-    mensagem += `*Idade:* ${idade} anos\n`;
-    mensagem += `*Nível atual:* ${nivel}\n\n`;
-
-    mensagem += `*--- OBJETIVOS E PLANOS ---*\n`;
-    mensagem += `*Já estudou antes?* ${temExp === 'sim' ? 'Sim' : 'Não'}\n`;
-
-    // Só adiciona os detalhes se o aluno marcou que tem experiência
-    if (temExp === 'sim' && detalhesExp !== "") {
-        mensagem += `*Detalhes da exp:* ${detalhesExp}\n`;
-    }
-
-    mensagem += `*Objetivo:* ${objetivo}\n`;
-    mensagem += `*Plano de interesse:* ${plano}\n`;
-    mensagem += `*Preferência de horário:* ${horario}\n\n`;
-    mensagem += `_Enviado pelo site The Fluency Era_`;
-
-    // 5. CONFIGURAÇÃO DO LINK 
-    const meuNumero = "5582933005496";
-
-    // Aqui o encodeURIComponent transforma a mensagem acima em um link que o navegador entende
-    const url = `https://wa.me/${meuNumero}?text=${encodeURIComponent(mensagem)}`;
-
-    // 6. EXECUÇÃO (Abre o WhatsApp)
-    window.open(url, '_blank');
-
-    // 7. RESTAURAR O BOTÃO (Após 1 segundos para o aluno ver que foi enviado)
-    setTimeout(() => {
-        btn.innerHTML = 'Enviar e Iniciar Chat';
-        btn.style.opacity = '1';
-        btn.disabled = false;
-    }, 2000);
-}
-
-/* LÓGICA DOS MODAIS (PÁGINA INICIAL)*/
-
-function abrirModal(tipo) {
-    const modal = document.getElementById('meuModal');
-    const titulo = document.getElementById('modalTitulo');
-    const texto = document.getElementById('modalTexto');
-
-    const infos = {
-        'dinamicas': {
-            titulo: '✨ Metodologia Ativa e Interativa ✨',
-            texto: 'Aulas planejadas para máxima participação do aluno, utilizando ferramentas digitais que transformam o aprendizado em uma experiência prática, fluida e longe da exaustão.'
-        },
-        'foco': {
-            titulo: '🎯 Ensino Personalizado 🎯',
-            texto: 'Cronograma moldado pelos seus objetivos específicos (carreira, viagens ou exames). Suporte via WhatsApp e flexibilidade total.'
-        },
-        'digital': {
-            titulo: '📖 Excelência Didática Oxford 📖',
-            texto: 'Utilização da base acadêmica da Oxford University Press com acesso digital completo ao Student’s Book e Workbook.'
+    // Fecha a janela se clicar em qualquer área sombreada fora do card
+    window.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
         }
-    };
+    });
 
-    if (infos[tipo]) {
-        titulo.innerText = infos[tipo].titulo;
-        texto.innerText = infos[tipo].texto;
-        modal.style.display = "block";
-    }
-}
+    // --- LOGICA DE ENVIO DO FORMULÁRIO PARA O WHATSAPP ---
+    const whatsappForm = document.getElementById('whatsappForm');
 
-function fecharModal() {
-    const modal = document.getElementById('meuModal');
-    if (modal) modal.style.display = "none";
-}
+    whatsappForm.addEventListener('submit', (e) => {
+        e.preventDefault();
 
-// Fecha o modal se o usuário clicar fora da área branca
-window.onclick = function (event) {
-    const modal = document.getElementById('meuModal');
-    if (event.target == modal) {
-        fecharModal();
-    }
-}
+        // Coleta inteligente dos dados dos inputs
+        const name = document.getElementById('userName').value.trim();
+        const age = document.getElementById('userAge').value.trim();
+        const level = document.getElementById('englishLevel').value;
+        const experience = document.getElementById('hasExperience').value;
+        const objective = document.getElementById('userObjective').value.trim();
+        const plan = document.getElementById('preferredPlan').value;
+        const time = document.getElementById('preferredTime').value;
+
+        // NÚMERO DO WHATSAPP DA TEACHER LAURA (Mantenha o DDI 55 + DDD + Número)
+        const teacherPhoneNumber = "5582933005496";
+
+        // Criação da mensagem estruturada com quebras de linha e negritos (*texto*)
+        const messageText = `Olá, Teacher Laura! Gostaria de agendar uma aula experimental. Aqui estão as minhas informações:\n\n` +
+            `• *Nome:* ${name}\n` +
+            `• *Idade:* ${age} anos\n` +
+            `• *Como avalio meu inglês:* ${level}\n` +
+            `• *Experiência anterior:* ${experience}\n` +
+            `• *Principal Objetivo:* ${objective}\n` +
+            `• *Plano de Interesse:* ${plan}\n` +
+            `• *Preferência de Horário:* ${time}`;
+
+        // Codifica os caracteres especiais para manter a formatação segura na URL
+        const encodedMessage = encodeURIComponent(messageText);
+
+        const mobileLink = `https://api.whatsapp.com/send?phone=${teacherPhoneNumber}&text=${encodedMessage}`;
+        const desktopWebLink = `https://web.whatsapp.com/send?phone=${teacherPhoneNumber}&text=${encodedMessage}`;
+
+        // Detecta o dispositivo do usuário para abrir a melhor versão da API
+        if (/Android|iPhone|iPad/i.test(navigator.userAgent)) {
+            window.open(mobileLink, '_blank');
+        } else {
+            window.open(desktopWebLink, '_blank');
+        }
+
+        // Reseta o estado da UI pós-envio
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+        whatsappForm.reset();
+    });
+
+
+});
