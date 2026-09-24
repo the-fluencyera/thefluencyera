@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- LÓGICA DO ACORDION DO FAQ (CORRIGIDO) ---
+    // --- LÓGICA DO ACORDION DO FAQ  ---
     const faqQuestions = document.querySelectorAll('.faq-q');
 
     faqQuestions.forEach(question => {
