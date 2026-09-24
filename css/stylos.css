@@ -1,28 +1,20 @@
+/*   1. VARIÁVEIS GLOBAIS E RESET   */
+:root {
+    --bordô: #7A2621;         /* Tom de vinho principal dos botões e logo */
+    --bordô-light: #5E1B17;   /* Hover dos botões */
+    --rosa: #eac8d6;          /* Detalhes e bordas secundárias */
+    --rosa-light: #f5e4ed;    /* Fundo suave do FAQ e badges */
+    --creme: #f8f0e0;         /* Tom creme padrão do body */
+    --creme-light: #FDFBF7;   /* Variação creme claro para contraste */
+    --dark: #382d29;          /* Cor da tipografia principal */
+    --gray: #615551;          /* Cor dos parágrafos secundários */
+    --white: #FFFFFF;         /* Fundo interno dos cards */
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-}
-
-:root {
-    --bordô: #7A2621;
-    /* Tom de vinho principal dos botões e logo */
-    --bordô-light: #5E1B17;
-    /* Hover dos botões */
-    --rosa: #eac8d6;
-    /* Detalhes e bordas secundárias */
-    --rosa-light: #f5e4ed;
-    /* Fundo suave do FAQ e badges */
-    --creme: #f8f0e0;
-    /* Tom creme padrão do body */
-    --creme-light: #FDFBF7;
-    /* Variação creme claro para contraste */
-    --dark: #382d29;
-    /* Cor da tipografia principal */
-    --gray: #615551;
-    /* Cor dos parágrafos secundários */
-    --white: #FFFFFF;
-    /* Fundo interno dos cards */
 }
 
 body {
@@ -32,7 +24,7 @@ body {
     line-height: 1.6;
 }
 
-/*FONTES*/
+/*    2. TIPOGRAFIA   */
 h1,
 h2,
 h3,
@@ -48,23 +40,25 @@ h4,
 .modalities-section h2,
 .faq-section h2,
 .modal-body-box h2,
-.methodology-banner h2 {
+.methodology-banner h2,
+.item h3 {
     font-family: 'Cormorant Garamond', serif;
     font-weight: 600;
 }
 
-/* Padronização dos parágrafos e textos das seções para usarem a Plus Jakarta Sans */
 p,
 .section-header p,
 .about-content p,
 .report-text p,
 .feature-card p,
 .modality-card p,
-.faq-q span {
+.faq-q span,
+.item p,
+.intro {
     font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
-/*NAVBAR (MENU SUPERIOR)*/
+/*   3. NAVBAR (MENU SUPERIOR)   */
 nav {
     display: flex;
     justify-content: space-between;
@@ -82,6 +76,7 @@ nav {
     letter-spacing: 2px;
     color: var(--bordô);
     font-weight: bold;
+    white-space: nowrap; /* Garante que a logo não quebre linha de forma indesejada */
 }
 
 .btn-nav {
@@ -95,13 +90,14 @@ nav {
     letter-spacing: 1px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    white-space: nowrap;
 }
 
 .btn-nav:hover {
     background-color: var(--bordô-light);
 }
 
-/*ELEMENTOS VISUAIS: BADGES E BOTÕES GERAIS*/
+/*  4. ELEMENTOS VISUAIS: BADGES E BOTÕES  */
 .badge {
     background-color: #f8e7e7;
     padding: 6px 16px;
@@ -144,7 +140,7 @@ nav {
     transform: translateY(-2px);
 }
 
-/*SEÇÃO HERO*/
+/*  5. SEÇÃO HERO */
 .hero {
     padding: 60px 8% 100px 8%;
     background-color: var(--creme);
@@ -223,7 +219,64 @@ nav {
     font-weight: 500;
 }
 
-/*CONFIGURAÇÃO DO GRID DE BENEFÍCIOS*/
+/*   6. SEÇÃO (POR QUE ESCOLHER / GRID DE 4)  */
+.section {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 100px 8%;
+}
+
+.eyebrow {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--bordô);
+    margin-bottom: 14px;
+}
+
+.intro {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--gray);
+    max-width: 740px;
+    margin-bottom: 64px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+}
+
+.item .number {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: var(--bordô);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 22px;
+}
+
+.item h3 {
+    font-size: 21px;
+    margin: 0 0 12px;
+    color: var(--dark);
+}
+
+.item p {
+    font-size: 14.5px;
+    line-height: 1.7;
+    color: var(--gray);
+    margin: 0;
+}
+
+/*  7. SEÇÕES GERAIS (FEATURES, ABOUT, ETC)  */
 .features-section {
     padding: 100px 8%;
     background-color: var(--creme-light);
@@ -294,7 +347,7 @@ nav {
     font-weight: 400;
 }
 
-/*METODOLOGIA BANNER*/
+/*   8. METODOLOGIA BANNER  */
 .methodology-banner {
     background-color: var(--bordô);
     color: var(--white);
@@ -333,7 +386,7 @@ nav {
     font-weight: 400;
 }
 
-/*THE FLUENCY REPORT*/
+/*   9. THE FLUENCY REPORT  */
 .report-section {
     padding: 100px 8%;
     background-color: var(--creme-light);
@@ -400,7 +453,7 @@ nav {
     font-weight: 400;
 }
 
-/*ABOUT SECTION (QUEM É TEACHER LAURA?)*/
+/*   10. ABOUT SECTION  */
 .about-section {
     padding: 100px 8%;
     background-color: var(--creme);
@@ -462,11 +515,14 @@ nav {
 }
 
 .subtitle-instructor {
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 1.5px;
-    color: var(--bordô);
-    margin-bottom: 20px;
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-size: 11px !important;
+    color: var(--bordô) !important;
+    font-weight: 600 !important;
+    letter-spacing: 1.5px !important;
+    text-transform: uppercase !important;
+    display: block !important;
+    margin-bottom: 20px !important;
 }
 
 .about-content p {
@@ -494,7 +550,7 @@ nav {
     color: var(--dark);
 }
 
-/*MODALIDADES*/
+/*    11. MODALIDADES   */
 .modalities-section {
     padding: 100px 8%;
     background-color: var(--creme-light);
@@ -559,7 +615,7 @@ nav {
     margin-bottom: 15px;
 }
 
-/*SEÇÃO FAQ ACCORDION*/
+/*   12. FAQ ACCORDION */
 .faq-section {
     padding: 100px 8%;
     background-color: var(--rosa-light);
@@ -641,7 +697,7 @@ nav {
     color: var(--white);
 }
 
-/*SEÇÃO FINAL CTA & FOOTER*/
+/* 13. CTA FINAL & FOOTER */
 .cta-final {
     padding: 100px 8%;
     background-color: var(--creme-light);
@@ -691,7 +747,7 @@ footer {
     font-size: 10px;
 }
 
-/*INTERFACE INTERATIVA MODAL*/
+/*   14. MODAL  */
 .modal {
     display: none;
     position: fixed;
@@ -801,9 +857,8 @@ footer {
     background-color: var(--bordô-light);
 }
 
-/* RESPONSIVIDADE (MEDIA QUERIES)*/
+/*   15. RESPONSIVIDADE (MEDIA QUERIES) */
 @media (max-width: 992px) {
-
     .hero-container,
     .report-container,
     .about-container,
@@ -818,10 +873,21 @@ footer {
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 900px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 48px;
+    }
 
+    h2 {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 600px) {
     .features-grid,
-    .modalities-grid {
+    .modalities-grid,
+    .grid {
         grid-template-columns: 1fr;
     }
 
@@ -834,135 +900,20 @@ footer {
     }
 }
 
-/* Força a alteração do subtítulo ignorando regras antigas */
-.about-content .subtitle-instructor,
-.about-text .subtitle-instructor,
-p.subtitle-instructor {
-    font-family: 'Plus Jakarta Sans', sans-serif !important;
-    font-size: 11px !important;
-    /* Diminui o tamanho */
-    color: #7A2621 !important;
-    /* Força a cor vermelha/bordô */
-    font-weight: 600 !important;
-    letter-spacing: 1.5px !important;
-    /* Espaçamento elegante */
-    text-transform: uppercase !important;
-    /* Em maiúsculas */
-    display: block !important;
-    margin-bottom: 20px !important;
-}
-
-/*Adicionando outro CSS de modificação para a linha 44 <section class="section"> */
-:root {
-    --burgundy: #832424;
-    --dusty-rose: #EAC8D6;
-    --peach: #FAE8D6;
-    --ink: #2B2320;
-    --muted: #6B5F5A;
-}
-
-* {
-    box-sizing: border-box;
-}
-
-body {
-    margin: 0;
-    background: #FFFDFB;
-    font-family: 'Poppins', sans-serif;
-    color: var(--ink);
-}
-
-.section {
-    max-width: 1180px;
-    margin: 0 auto;
-    padding: 80px 32px;
-}
-
-.eyebrow {
-    font-family: 'Poppins', sans-serif;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--burgundy);
-    margin-bottom: 14px;
-}
-
-h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 600;
-    font-size: 42px;
-    line-height: 1.15;
-    margin: 0 0 20px;
-    color: var(--ink);
-}
-
-h2 em {
-    font-style: italic;
-    color: var(--burgundy);
-}
-
-.intro {
-    font-size: 16px;
-    line-height: 1.7;
-    color: var(--muted);
-    max-width: 740px;
-    margin-bottom: 64px;
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 40px;
-}
-
-.item .number {
-    width: 38px;
-    height: 38px;
-    border-radius: 50%;
-    background: var(--burgundy);
-    color: #fff;
-    font-family: 'Poppins', sans-serif;
-    font-size: 13px;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 22px;
-}
-
-.item h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 600;
-    font-size: 21px;
-    margin: 0 0 12px;
-    color: var(--ink);
-}
-
-.item p {
-    font-size: 14.5px;
-    line-height: 1.7;
-    color: var(--muted);
-    margin: 0;
-}
-
-@media (max-width: 900px) {
-    .grid {
-        grid-template-columns: repeat(2, 1fr);
-        row-gap: 48px;
+/* CORREÇÃO ESPECÍFICA DO CABEÇALHO NO MOBILE (NÃO ALTERA O DESKTOP) */
+@media (max-width: 480px) {
+    nav {
+        padding: 15px 5%;
     }
 
-    h2 {
-        font-size: 32px;
-    }
-}
-
-@media (max-width: 560px) {
-    .grid {
-        grid-template-columns: 1fr;
+    .logo {
+        font-size: 18px; /* Mantém compacto para o nome não quebrar */
+        letter-spacing: 1px;
     }
 
-    .section {
-        padding: 56px 24px;
+    .btn-nav {
+        padding: 8px 14px; /* Deixa o botão mais compacto no canto */
+        font-size: 11px;
+        letter-spacing: 0.5px;
     }
 }
