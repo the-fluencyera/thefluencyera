@@ -5,15 +5,24 @@
 }
 
 :root {
-    --bordô: #7A2621;         /* Tom de vinho principal dos botões e logo */
-    --bordô-light: #5E1B17;   /* Hover dos botões */
-    --rosa: #eac8d6;          /* Detalhes e bordas secundárias */
-    --rosa-light: #f5e4ed;    /* Fundo suave do FAQ e badges */
-    --creme: #f8f0e0;         /* Tom creme padrão do body */
-    --creme-light: #FDFBF7;   /* Variação creme claro para contraste */
-    --dark: #382d29;          /* Cor da tipografia principal */
-    --gray: #615551;          /* Cor dos parágrafos secundários */
-    --white: #FFFFFF;         /* Fundo interno dos cards */
+    --bordô: #7A2621;
+    /* Tom de vinho principal dos botões e logo */
+    --bordô-light: #5E1B17;
+    /* Hover dos botões */
+    --rosa: #eac8d6;
+    /* Detalhes e bordas secundárias */
+    --rosa-light: #f5e4ed;
+    /* Fundo suave do FAQ e badges */
+    --creme: #f8f0e0;
+    /* Tom creme padrão do body */
+    --creme-light: #FDFBF7;
+    /* Variação creme claro para contraste */
+    --dark: #382d29;
+    /* Cor da tipografia principal */
+    --gray: #615551;
+    /* Cor dos parágrafos secundários */
+    --white: #FFFFFF;
+    /* Fundo interno dos cards */
 }
 
 body {
@@ -24,11 +33,16 @@ body {
 }
 
 /*FONTES*/
-h1, h2, h3, h4, .logo, 
+h1,
+h2,
+h3,
+h4,
+.logo,
 .hero-text h1,
-.section-header h2, 
-.about-content h2, .about-content h3, 
-.report-text h2, 
+.section-header h2,
+.about-content h2,
+.about-content h3,
+.report-text h2,
 .feature-card h3,
 .modality-card h3,
 .modalities-section h2,
@@ -40,7 +54,13 @@ h1, h2, h3, h4, .logo,
 }
 
 /* Padronização dos parágrafos e textos das seções para usarem a Plus Jakarta Sans */
-p, .section-header p, .about-content p, .report-text p, .feature-card p, .modality-card p, .faq-q span {
+p,
+.section-header p,
+.about-content p,
+.report-text p,
+.feature-card p,
+.modality-card p,
+.faq-q span {
     font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
@@ -103,7 +123,8 @@ nav {
     margin-bottom: 12px;
 }
 
-.btn-hero, .btn-cta {
+.btn-hero,
+.btn-cta {
     background-color: var(--bordô);
     color: #f8e7e7;
     border: none;
@@ -117,7 +138,8 @@ nav {
     margin-top: 15px;
 }
 
-.btn-hero:hover, .btn-cta:hover {
+.btn-hero:hover,
+.btn-cta:hover {
     background-color: var(--bordô-light);
     transform: translateY(-2px);
 }
@@ -164,7 +186,8 @@ nav {
     overflow: hidden;
 }
 
-.hero-img-fallback, .about-img-fallback {
+.hero-img-fallback,
+.about-img-fallback {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -179,7 +202,7 @@ nav {
     color: #f8e7e7;
     padding: 15px 25px;
     border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(122,38,33,0.15);
+    box-shadow: 0 8px 24px rgba(122, 38, 33, 0.15);
     text-align: center;
     z-index: 5;
 }
@@ -189,7 +212,7 @@ nav {
     font-size: 28px;
     font-weight: bold;
     display: block;
-    border-bottom: 1px solid rgba(255,255,255,0.3);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
     padding-bottom: 2px;
     margin-bottom: 4px;
 }
@@ -229,7 +252,7 @@ nav {
 
 .features-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); 
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
 }
 
@@ -237,7 +260,7 @@ nav {
     background-color: var(--white);
     padding: 40px 30px;
     border-radius: 20px;
-    box-shadow: 0 4px 20px rgba(46,37,34,0.01);
+    box-shadow: 0 4px 20px rgba(46, 37, 34, 0.01);
     border: 1px solid #F0EAE1;
     transition: transform 0.3s ease;
 }
@@ -280,7 +303,7 @@ nav {
 }
 
 .badge-light {
-    background-color: rgba(255,255,255,0.12);
+    background-color: rgba(255, 255, 255, 0.12);
     padding: 5px 14px;
     border-radius: 50px;
     font-size: 11px;
@@ -327,7 +350,7 @@ nav {
     background-color: var(--white);
     border-radius: 24px;
     padding: 40px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.01);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.01);
     border: 1px solid #F0EAE1;
 }
 
@@ -408,7 +431,7 @@ nav {
     backdrop-filter: blur(10px);
     padding: 20px 25px;
     border-radius: 16px;
-    border: 1px solid rgba(255,255,255,0.5);
+    border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 .about-name-tag h3 {
@@ -670,7 +693,7 @@ footer {
 
 /*INTERFACE INTERATIVA MODAL*/
 .modal {
-    display: none; 
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -692,7 +715,7 @@ footer {
     max-height: 90vh;
     overflow-y: auto;
     position: relative;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
 }
 
 .close-modal {
@@ -780,22 +803,32 @@ footer {
 
 /* RESPONSIVIDADE (MEDIA QUERIES)*/
 @media (max-width: 992px) {
-    .hero-container, .report-container, .about-container, .cta-container {
+
+    .hero-container,
+    .report-container,
+    .about-container,
+    .cta-container {
         grid-template-columns: 1fr;
         gap: 40px;
     }
-    .features-grid, .modalities-grid {
+
+    .features-grid,
+    .modalities-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (max-width: 600px) {
-    .features-grid, .modalities-grid {
+
+    .features-grid,
+    .modalities-grid {
         grid-template-columns: 1fr;
     }
+
     .modal-body-box {
         padding: 30px 20px;
     }
+
     .hero-text h1 {
         font-size: 36px;
     }
@@ -806,11 +839,130 @@ footer {
 .about-text .subtitle-instructor,
 p.subtitle-instructor {
     font-family: 'Plus Jakarta Sans', sans-serif !important;
-    font-size: 11px !important;               /* Diminui o tamanho */
-    color: #7A2621 !important;                 /* Força a cor vermelha/bordô */
+    font-size: 11px !important;
+    /* Diminui o tamanho */
+    color: #7A2621 !important;
+    /* Força a cor vermelha/bordô */
     font-weight: 600 !important;
-    letter-spacing: 1.5px !important;         /* Espaçamento elegante */
-    text-transform: uppercase !important;     /* Em maiúsculas */
+    letter-spacing: 1.5px !important;
+    /* Espaçamento elegante */
+    text-transform: uppercase !important;
+    /* Em maiúsculas */
     display: block !important;
     margin-bottom: 20px !important;
+}
+
+/*Adicionando outro CSS de modificação para a linha 44 <section class="section"> */
+:root {
+    --burgundy: #832424;
+    --dusty-rose: #EAC8D6;
+    --peach: #FAE8D6;
+    --ink: #2B2320;
+    --muted: #6B5F5A;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #FFFDFB;
+    font-family: 'Poppins', sans-serif;
+    color: var(--ink);
+}
+
+.section {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 80px 32px;
+}
+
+.eyebrow {
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--burgundy);
+    margin-bottom: 14px;
+}
+
+h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 42px;
+    line-height: 1.15;
+    margin: 0 0 20px;
+    color: var(--ink);
+}
+
+h2 em {
+    font-style: italic;
+    color: var(--burgundy);
+}
+
+.intro {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--muted);
+    max-width: 740px;
+    margin-bottom: 64px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+}
+
+.item .number {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: var(--burgundy);
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 22px;
+}
+
+.item h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 21px;
+    margin: 0 0 12px;
+    color: var(--ink);
+}
+
+.item p {
+    font-size: 14.5px;
+    line-height: 1.7;
+    color: var(--muted);
+    margin: 0;
+}
+
+@media (max-width: 900px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 48px;
+    }
+
+    h2 {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 560px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section {
+        padding: 56px 24px;
+    }
 }
